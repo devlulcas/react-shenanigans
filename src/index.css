@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--beige);
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* CORES */
+  --dark-cobalt: #0d2b45;
+  --cobalt: #203c56;
+  --purple: #544e68;
+  --light-purple: #8d697a;
+  --dark-orange: #d08159;
+  --orange: #ffaa5e;
+  --yellow: #ffd4a3;
+  --beige: #ffecd6;
+
+  /* FONTES */
+  --montserrat: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+/* REMOVE STYLES */
+a {
+  text-decoration: none;
+}

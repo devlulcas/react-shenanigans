@@ -1,0 +1,9 @@
+.content {
+  background: var(--cobalt);
+  height: 95%;
+  font-family: var(--montserrat);
+}
+
+.main {
+  height: 100%;
+}
