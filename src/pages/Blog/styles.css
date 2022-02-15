@@ -10,7 +10,10 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   height: 90%;
+  box-shadow: inset 1rem 1rem 1rem var(--dark-cobalt);
+  padding: 2rem;
 }
+

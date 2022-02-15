@@ -1,6 +1,6 @@
 .card {
   background: var(--orange);
-  width: 20rem;
+  width: 35rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -15,9 +15,13 @@
 
 .card h3 {
   font-size: 2rem;
+  text-align: center;
+  color: var(--dark-cobalt);
 }
 
 .card p {
   font-size: 1.5rem;
   margin-top: 1rem;
+  color: var(--cobalt);
+
 }
