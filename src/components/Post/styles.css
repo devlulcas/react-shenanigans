@@ -1,0 +1,23 @@
+.card {
+  background: var(--orange);
+  width: 20rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0 var(--light-purple), 1rem 1rem 0 var(--purple);
+}
+
+.card img {
+  border-radius: 0.5rem;
+}
+
+.card h3 {
+  font-size: 2rem;
+}
+
+.card p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
