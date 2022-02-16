@@ -1,27 +1,79 @@
+.card-link {
+  display: block;
+  font-weight: 800;
+  background: var(--dark-orange);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
 .card {
   background: var(--orange);
-  width: 35rem;
+  width: 28rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 0 var(--light-purple), 1rem 1rem 0 var(--purple);
+  border: 0.1rem solid var(--light-purple);
+  transition: 0.3s all;
 }
 
-.card img {
+.card:hover {
+  transform: scale(1.04);
+  box-shadow: 0.3rem 0.3rem 0 var(--light-purple), 0.7rem 0.7rem 0 var(--purple);
+}
+
+.card .image-container {
+  margin: 1rem;
+}
+
+.card .image-container:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 100rem;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-0.1rem, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(0.2rem, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-0.4rem, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(0.4rem, 0, 0);
+  }
+}
+
+.card img,
+.card .image-container {
   border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
+  background: var(--beige);
 }
 
 .card h3 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-align: center;
   color: var(--dark-cobalt);
 }
 
 .card p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   color: var(--cobalt);
-
 }

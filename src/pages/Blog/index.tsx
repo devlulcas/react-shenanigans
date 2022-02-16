@@ -1,4 +1,3 @@
-import Title from "../../components/Title";
 import "./styles.css";
 import Post from "../../components/Post";
 import { useEffect, useState } from "react";
@@ -10,16 +9,13 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   async function getPosts() {
-    const url = "https://jsonplaceholder.typicode.com/posts/";
-    const data = await fetch(url).then((response) => response.json());
-    const posts = PostModel.streamList(data);
-
+    const posts = await PostModel.getPostsFromApi();
     setPosts(posts);
     setLoading(false);
   }
 
   const displayPosts = posts.map((post) => {
-    return <Post post={post} />;
+    return <Post isUser={false} post={post} />;
   });
 
   useEffect(() => {
@@ -27,14 +23,8 @@ export default function Blog() {
   }, []);
 
   return (
-    <>
-      <section className="blog">
-        <Title>BLOG</Title>
-
-        <section className="blog-container">
-          {loading ? <Spinner /> : displayPosts}
-        </section>
-      </section>
-    </>
+    <section className="blog-container">
+      {loading ? <Spinner /> : displayPosts}
+    </section>
   );
 }
