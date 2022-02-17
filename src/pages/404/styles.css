@@ -1,0 +1,7 @@
+.canvas {
+  height: 95%;
+  width: 100%;
+  background: var(--purple);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

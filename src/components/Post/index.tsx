@@ -28,7 +28,7 @@ export default function Post({ post, isUser }: PostProps) {
   return (
     <article className="card">
       {!isUser ? userPosts : ""}
-      
+
       <div className="image-container">
         <img
           onError={() => setSrc(placeholderImage)}
@@ -38,11 +38,14 @@ export default function Post({ post, isUser }: PostProps) {
       </div>
       <h3>{post.title.toUpperCase()}</h3>
       <p>{post.body}</p>
-      <p>
-        Por: {post.author.name}. Vulgo: {post.author.username}
-      </p>
-      
-      {isUser ? comments : ""}
+      <footer>
+        <div className="container">
+          <p>
+            Por: {post.author.name}. Vulgo: {post.author.username}
+          </p>
+          {isUser ? comments : ""}
+        </div>
+      </footer>
     </article>
   );
 }

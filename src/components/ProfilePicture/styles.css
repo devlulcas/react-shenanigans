@@ -3,13 +3,17 @@
   justify-content: center;
   align-items: center;
 }
+
 .profile-picture-frame {
   width: 10rem;
-  border-radius: 50% 50% 0 0 ;
+  height: 10rem;
+  border-radius: 50%;
   overflow: hidden;
   background: var(--beige);
   margin: 1rem;
 }
+
 .profile-picture {
   height: 10rem;
+  transform: translateY(5%);
 }

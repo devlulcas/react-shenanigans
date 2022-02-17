@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import BlogLayout from "./layouts/Blog";
 import Root from "./layouts/Root";
+import NotFound from "./pages/404";
 import AnimePhrase from "./pages/AnimePhrases";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
@@ -16,10 +16,12 @@ function App() {
 
           <Route path="/blog" element={<BlogLayout />}>
             <Route index element={<Blog />} />
-            <Route path="/blog/:user" element={<UserBlog />} />
+            <Route path=":user" element={<UserBlog />} />
           </Route>
 
           <Route path="/animephrase" element={<AnimePhrase />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
