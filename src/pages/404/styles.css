@@ -1,7 +1,14 @@
 .canvas {
-  height: 95%;
+  height: 99.6%;
   width: 100%;
   background: var(--purple);
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+}
+
+.racoon {
+  visibility: hidden;
+  position: absolute;
 }
