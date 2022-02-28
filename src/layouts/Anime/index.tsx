@@ -2,13 +2,15 @@ import { Outlet } from "react-router-dom";
 import Title from "../../components/Title";
 import "../layout.css";
 
-export default function BlogLayout() {
+function AnimeLayout() {
   return (
     <>
       <section className="content">
-        <Title>BLOG</Title>
+        <Title> FRASES DE ANIME </Title>
         <Outlet />
       </section>
     </>
   );
 }
+
+export default AnimeLayout;

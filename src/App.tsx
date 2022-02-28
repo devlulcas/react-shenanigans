@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AnimeLayout from "./layouts/Anime";
 import BlogLayout from "./layouts/Blog";
 import Root from "./layouts/Root";
 import NotFound from "./pages/404";
@@ -19,7 +20,9 @@ function App() {
             <Route path=":user" element={<UserBlog />} />
           </Route>
 
-          <Route path="/animephrase" element={<AnimePhrase />} />
+          <Route path="/animephrase" element={<AnimeLayout />}>
+            <Route index element={<AnimePhrase />} />
+          </Route>
 
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -1,6 +1,8 @@
 import "./styles.css";
 import raccoon from "../../assets/raccoon.png";
-import { useRef } from "react";
+import raccoonEating from "../../assets/raccoon_eating.png";
+import nice from "../../assets/nice.mp3";
+import { MouseEvent, useRef, useState } from "react";
 
 type Canvas = HTMLCanvasElement | null | undefined;
 type Context2d = CanvasRenderingContext2D | null | undefined;
@@ -62,14 +64,37 @@ function drawRaccoon({ canvas, image, event }: drawProps) {
 export default function NotFound() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const image = useRef<HTMLImageElement>(null);
+  const sound = useRef<HTMLAudioElement>(null);
+
+  const [src, setSrc] = useState(raccoon);
+  const [eating, setEating] = useState(false);
+
+  function shenanigans(event: MouseEvent<HTMLCanvasElement>) {
+    const canvasElement = canvas.current;
+    const raccoon = image.current;
+    drawRaccoon({ canvas: canvasElement, image: raccoon, event });
+  }
+
+  function changeRacoon(event: MouseEvent<HTMLCanvasElement>) {
+    if (eating) {
+      setSrc(raccoonEating);
+      setEating(!eating);
+      sound.current?.play();
+      return;
+    }
+    setSrc(raccoon);
+    setEating(!eating);
+  }
 
   return (
     <>
+      <audio src={nice} ref={sound}></audio>
+
       <img
         className="racoon"
         ref={image}
         width={"11px"}
-        src={raccoon}
+        src={src}
         alt="guaxinim"
       />
 
@@ -78,11 +103,8 @@ export default function NotFound() {
         height="404px"
         ref={canvas}
         className="canvas"
-        onMouseMove={(event) => {
-          const canvasElement = canvas.current;
-          const raccoon = image.current;
-          drawRaccoon({ canvas: canvasElement, image: raccoon, event });
-        }}
+        onClick={changeRacoon}
+        onMouseMove={shenanigans}
       />
     </>
   );

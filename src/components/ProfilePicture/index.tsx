@@ -7,13 +7,13 @@ type profilePictureProps = {
 export default function ProfilePicture({ userId }: profilePictureProps) {
   return (
     <div className="profile-picture-container">
-      <div className="profile-picture-frame">
+      <picture className="profile-picture-frame">
         <img
           className="profile-picture"
           src={`https://avatars.dicebear.com/api/open-peeps/${userId}.svg`}
           alt="profile picture"
         />
-      </div>
+      </picture>
     </div>
   );
 }
