@@ -1,6 +1,3 @@
-import placeholderCover from "../assets/coverImageSmall.png";
-import placeholderPoster from "../assets/posterImageMedium.png";
-
 export class Anime {
   englishTitle!: string;
   quote!: string;
@@ -20,17 +17,7 @@ export class Anime {
 
   static async getAnimeFromApi() {
     const url = "https://animechan.vercel.app/api/random";
-    // const animeData = await fetch(url, { mode: "no-cors" }).then((response) =>
-    //   response.json(),
-    // );
-
-    // Placeholder
-    const animeData = {
-      anime: "One Piece",
-      character: "Portgas D. Ace",
-      quote:
-        "Sometimes the blood rushes to my head and I feel like, if I run I'll lose something important.",
-    };
+    const animeData = await fetch(url).then((response) => response.json());
 
     const anime = new Anime(animeData);
 
@@ -51,7 +38,7 @@ export class Anime {
     this.japoneseTitle = attributes.titles["ja_jp"];
     this.startDate = attributes.startDate;
     this.endDate = attributes.endDate || "Not ended";
-    this.posterImage = attributes.posterImage.large || placeholderPoster;
-    this.coverImage = attributes.coverImage.small || placeholderCover;
+    this.posterImage = attributes.posterImage.large;
+    this.coverImage = attributes.coverImage.small;
   }
 }
